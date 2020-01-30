@@ -12,6 +12,7 @@ class Search(models.Model):
 	timstamp = models.DateTimeField(auto_now=True)
 
 	class Meta:
+		ordering = ('-timstamp',)
 		verbose_name = "Search"
 		verbose_name_plural = "Searchs"
 

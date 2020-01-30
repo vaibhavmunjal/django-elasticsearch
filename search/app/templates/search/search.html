@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Search Result</title>
+</head>
+<body>
+
+	<br>
+	<form>
+	<input type="Search" name="q" placeholder="Search name"
+	{% if request.GET.q %}
+		value="{{request.GET.q}}"
+	{% endif %}
+	>
+
+	<input type="Search" name="description" placeholder="Search description"
+	{% if request.GET.description %}
+		value="{{request.GET.description}}"
+	{% endif %}
+	>
+
+	<button>Search</button>
+	</form>
+	
+	<br>
+	<br>
+	<br>
+	<hr>
+
+	<table border="1">
+
+		<thead>
+			<tr>
+			<td>Name</td>
+			<td>Description</td>
+			</tr>
+		</thead>
+
+		<tbody>
+
+			{% if matched_search %}
+			{% for obj in matched_search %}
+				<tr>
+					<td>{{obj.name}}</td>
+					<td>{{obj.description}}</td>
+				</tr>
+			{% endfor %}
+
+			{% else %}
+
+				<td colspan="2"><h3>No Data Found</h3></td>
+
+			{% endif %}
+
+		</tbody>
+	</table>
+
+</body>
+</html>

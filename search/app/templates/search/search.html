@@ -7,13 +7,13 @@
 
 	<br>
 	<form>
-	<input type="Search" name="q" placeholder="Search name"
+	<input type="Search" name="q" placeholder="Search name(exact)"
 	{% if request.GET.q %}
 		value="{{request.GET.q}}"
 	{% endif %}
 	>
 
-	<input type="Search" name="description" placeholder="Search description"
+	<input type="Search" name="description" placeholder="Search description(contains)"
 	{% if request.GET.description %}
 		value="{{request.GET.description}}"
 	{% endif %}

@@ -32,6 +32,7 @@ ALLOWED_HOSTS = []
 
 INSTALLED_APPS = [
     'app.apps.AppConfig',
+    'django_elasticsearch_dsl',
 
     'django.contrib.admin',
     'django.contrib.auth',
@@ -120,3 +121,11 @@ USE_TZ = True
 # https://docs.djangoproject.com/en/3.0/howto/static-files/
 
 STATIC_URL = '/static/'
+
+
+
+ELASTICSEARCH_DSL={
+    'default': {
+        'hosts': '172.17.0.3:9200'
+    },
+}
